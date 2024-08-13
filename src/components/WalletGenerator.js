@@ -37,11 +37,30 @@ const WalletGenerator = () => {
   };
 
   return (
-    <div>
-      <button onClick={generateMnemonic}>Generate Mnemonic</button>
-      <textarea value={mnemonic} readOnly />
-      <button onClick={createEthereumWallet}>Create Ethereum Wallet</button>
-      <button onClick={createSolanaWallet}>Create Solana Wallet</button>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <button
+        className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600"
+        onClick={generateMnemonic}
+      >
+        Generate Mnemonic
+      </button>
+      <textarea
+        className="w-full mt-4 p-2 border border-gray-300 rounded"
+        value={mnemonic}
+        readOnly
+      />
+      <button
+        className="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600"
+        onClick={createEthereumWallet}
+      >
+        Create Ethereum Wallet
+      </button>
+      <button
+        className="bg-teal-500 text-white font-semibold py-2 px-4 rounded hover:bg-teal-600"
+        onClick={createSolanaWallet}
+      >
+        Create Solana Wallet
+      </button>
       <ul>
         {wallets.map((wallet, index) => (
           <li key={index}>
