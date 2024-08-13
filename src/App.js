@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import WalletGenerator from "./components/WalletGenerator";
+import WalletList from "./components/WalletList";
+import "./App.css";
 
 function App() {
+  const [wallets, setWallets] = useState([]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>My Web-Based Wallet ,hii there</h1>
       </header>
+      <main>
+        <WalletGenerator setWallets={setWallets} />
+        <WalletList wallets={wallets} />
+      </main>
     </div>
   );
 }
