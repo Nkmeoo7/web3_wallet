@@ -61,13 +61,16 @@ const WalletGenerator = () => {
       >
         Create Solana Wallet
       </button>
-      <ul>
-        {wallets.map((wallet, index) => (
-          <li key={index}>
-            {wallet.type} Public Key: {wallet.publicKey}
-          </li>
-        ))}
-      </ul>
+      <div class="overflow-x-auto">
+        <ul class="space-y-2 p-4 bg-white shadow-md rounded-lg">
+          {wallets.map((wallet, index) => (
+            <li key={index} class="text-gray-800">
+              <span class="font-semibold">{wallet.type}:</span> Public Key:{" "}
+              {wallet.publicKey}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
